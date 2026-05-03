@@ -32,12 +32,12 @@ Three models were trained and compared per junction:
 
 #### Results
 **Model Performance by Junction (Test Set)**
-| **Junction** | **Best Model** | **R²** | **RMSE Reductions vs ARIMA**|
+| **Junction** | **Best Model** | **R²** | **RMSE**|
 |-------------|----------------|--------|-----------------------------|
-| Junction 1(high variability) | Gradient Boosting | ~0.93 | ~80% |
-| Junction 2 | Random Forest | ~0.93 | ~55% |
-| Junction 3 | Random Forest (tuned) | ~0.91 | ~45% |
-| Junction 4 (stable) | Random Forest | ~0.93 | ~60% |
+| Junction 1(high variability) | Gradient Boosting | 0.930 | 6.28 |
+| Junction 2 | Random Forest | 0.719 | 4.39 |
+| Junction 3 | Random Forest (tuned) | 0.695 | 5.78 |
+| Junction 4 (stable) | Random Forest | 0.440 | 3.18 |
 
 **Cross-validation (Best Model per Junction)**
 - Stable junctions (2 & 4):- CV RMSE as low as ~ 2.6 vehicles/hour, low-variance across folds.
@@ -45,7 +45,7 @@ Three models were trained and compared per junction:
 - Consistent CV vs test performance confirms models generalise well to unseen future data.
 
 **Key finding**
-ARIMA recorded negative R² across all junctions, performing worse than a simple mean predictor. This confirms that traffic forecasting in complex urban environments requires multivariate models that can incorporate weather, time, adn event signals, not just historical traffic alone.
+ARIMA recorded negative R² across all junctions, performing worse than a simple mean predictor. This confirms that traffic forecasting in complex urban environments requires multivariate models that can incorporate weather, time, and event signals, not just historical traffic alone.
 
 #### Conclusions:
 Junction-wise forecasting is necessary because a single city-level models alone cannot capture location-specific congestion dynamics. Pratically:
